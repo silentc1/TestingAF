@@ -1,0 +1,38 @@
+# IDE files
+.idea/
+*.iml
+.vscode/
+.settings/
+.project
+.classpath
+
+# Build files
+target/
+build/
+out/
+bin/
+
+# Test output
+test-output/
+.allure/
+allure-results/
+
+# Logs
+*.log
+logs/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Dependencies
+.mvn/
+
+# Browser driver binaries
+drivers/
+*.exe
+
+# Environment specific files
+*.properties
+!src/main/resources/application.properties
+!src/test/resources/test.properties 

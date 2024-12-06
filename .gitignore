@@ -1,4 +1,13 @@
-# IDE files
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+
+# IDE
 .idea/
 *.iml
 .vscode/
@@ -6,33 +15,16 @@
 .project
 .classpath
 
-# Build files
-target/
-build/
-out/
-bin/
-
-# Test output
-test-output/
-.allure/
-allure-results/
+# Compiled files
+*.class
+*.jar
+*.war
 
 # Logs
 *.log
+test-output/
 logs/
 
-# OS files
+# OS specific
 .DS_Store
 Thumbs.db
-
-# Dependencies
-.mvn/
-
-# Browser driver binaries
-drivers/
-*.exe
-
-# Environment specific files
-*.properties
-!src/main/resources/application.properties
-!src/test/resources/test.properties 

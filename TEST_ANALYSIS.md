@@ -273,13 +273,23 @@ Wikipedia is a free online encyclopedia with a multilingual interface and extens
 ## 6. Test Results Summary
 
 ### 6.1 API Test Results
-- Total Tests: 12
-- Test Categories: CRUD operations, error cases, performance
+- Total Tests: 15
+- Test Categories: 
+  * CRUD operations (create, read, update, patch, delete)
+  * Error handling (non-existent, invalid request)
+  * Performance (response time, multiple posts)
+  * Comments functionality
 - Success Criteria: Response codes, data validation, timing thresholds
 
 ### 6.2 UI Test Results
-- Total Tests: 8
-- Test Categories: Search, navigation, forms, responsive design
+- Total Tests: 10
+- Test Categories: 
+  * Search (basic, advanced, suggestions)
+  * Navigation (random article, links, article navigation)
+  * Language selection
+  * Mobile view
+  * Article actions
+  * Accessibility features
 - Success Criteria: Element visibility, form validation, page transitions
 
 ## 7. Future Enhancements

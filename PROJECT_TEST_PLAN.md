@@ -30,7 +30,7 @@
    - RESTful endpoints
 
 3. Performance Requirements
-   - Response time < 2 seconds
+   - Response time < 500ms
    - Proper error handling
    - Data consistency
 
@@ -56,95 +56,78 @@
 
 ### 2.1 API Test Cases
 
-#### TC001: Basic CRUD Operations
-**Objective**: Verify basic CRUD operations for posts
-1. Create Post (POST)
+#### TC001: CRUD Operations
+**Objective**: Verify all CRUD operations for posts
+1. Create Post (testCreatePost)
    - Input: Title, body, userId
    - Expected: 201 Created
    - Validation: Response contains new post ID
 
-2. Read Post (GET)
+2. Read Operations (testGetPost, testGetAllPosts)
    - Input: Post ID
    - Expected: 200 OK
    - Validation: Correct post data returned
 
-3. Update Post (PUT)
+3. Update Operations (testUpdatePost, testPatchPost)
    - Input: Updated title and body
    - Expected: 200 OK
    - Validation: Changes reflected
 
-4. Delete Post (DELETE)
+4. Delete Operation (testDeletePost)
    - Input: Post ID
    - Expected: 200 OK
    - Validation: Post no longer accessible
 
 #### TC002: Error Handling
 **Objective**: Verify API error responses
-1. Invalid Resource
+1. Non-existent Resource (testGetNonExistentPost)
    - Request: GET /posts/999
    - Expected: 404 Not Found
 
-2. Invalid Data
-   - Request: POST /posts with empty body
+2. Invalid Request (testInvalidRequest)
+   - Request: Malformed request body
    - Expected: 400 Bad Request
-
-3. Invalid Method
-   - Request: PATCH /nonexistent
-   - Expected: 404 or 405
 
 #### TC003: Performance Testing
 **Objective**: Verify API performance
-1. Response Time
+1. Response Time (testAPIResponseTime)
    - Action: GET /posts
-   - Expected: < 2000ms
-   - Measure: Average of 5 requests
+   - Expected: < 500ms
+   - Measure: Average response time
 
-2. Multiple Requests
-   - Action: 10 concurrent GET requests
+2. Multiple Requests (testMultiplePostsPerformance)
+   - Action: Multiple concurrent requests
    - Expected: All successful
-   - Measure: Response times
+   - Measure: Response times for 5 iterations
+
+#### TC004: Additional Functionality
+**Objective**: Verify related endpoints
+1. Comments (testGetPostComments)
+   - Action: GET post comments
+   - Expected: 200 OK
+   - Validation: Comment structure
 
 ### 2.2 UI Test Cases
 
-#### TC004: Search Functionality
-**Objective**: Verify search feature
-1. Basic Search
-   - Action: Enter search term
-   - Expected: Results displayed
-   - Validation: Relevant results shown
+#### TC005: Search and Navigation
+**Objective**: Verify search and navigation features
+1. Search Features
+   - testSearchFunctionality
+   - testSearchSuggestions
+   - testAdvancedSearch
+   - testRandomArticle
 
-2. Empty Search
-   - Action: Submit empty search
-   - Expected: Validation message
-   - Validation: Error displayed
+2. Navigation Features
+   - testNavigationLinks
+   - testArticleNavigation
 
-#### TC005: Form Validation
-**Objective**: Verify form handling
-1. Create Account Form
-   - Actions:
-     * Submit empty form
-     * Enter invalid email
-     * Enter valid data
-   - Expected: Appropriate validation messages
-
-2. Login Form
-   - Actions:
-     * Empty credentials
-     * Invalid credentials
-     * Valid credentials
-   - Expected: Proper error/success handling
-
-#### TC006: Navigation
-**Objective**: Verify page navigation
-1. Menu Navigation
-   - Action: Click menu items
-   - Expected: Correct page loads
-   - Validation: URL and content
-
-2. Language Selection
-   - Action: Change language
-   - Expected: UI updates
-   - Validation: Content translation
+#### TC006: Additional Features
+**Objective**: Verify other UI features
+1. Language and Display
+   - testLanguageSelection
+   - testMobileView
+   - testArticleActions
+   - testAccessibilityFeatures
 
 ## 3. Test Implementation
 

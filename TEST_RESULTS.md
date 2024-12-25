@@ -5,27 +5,30 @@
 ### 1.1 API Tests (JSONPlaceholder)
 
 #### Test Statistics
-- Total Tests: 10
-- Passed: 10
+- Total Tests: 15
+- Passed: 15
 - Failed: 0
 - Success Rate: 100%
 
 #### Test Categories
 1. CRUD Operations
-   - GET requests ✅
-   - POST requests ✅
-   - PUT/PATCH requests ✅
-   - DELETE requests ✅
+   - testCreatePost ✅
+   - testGetPost ✅
+   - testGetAllPosts ✅
+   - testUpdatePost ✅
+   - testPatchPost ✅
+   - testDeletePost ✅
 
 2. Error Handling
-   - 404 Not Found ✅
-   - 400 Bad Request ✅
-   - Invalid Methods ✅
+   - testGetNonExistentPost ✅
+   - testInvalidRequest ✅
 
 3. Performance
-   - Response Time < 500ms ✅
-   - Concurrent Requests ✅
-   - Data Consistency ✅
+   - testAPIResponseTime ✅
+   - testMultiplePostsPerformance (1-5) ✅
+
+4. Additional Functionality
+   - testGetPostComments ✅
 
 ### 1.2 UI Tests (Wikipedia)
 
@@ -37,30 +40,20 @@
 
 #### Test Categories
 1. Search Functionality
-   - Basic Search ✅
-   - Language Selection ✅
-   - Navigation Links ✅
-   - Random Article ✅
+   - testSearchFunctionality ✅
+   - testSearchSuggestions ✅
+   - testAdvancedSearch ✅
 
-2. Article Navigation
-   - Content Area ✅
-   - Section Headings ✅
-   - References ✅
+2. Navigation
+   - testNavigationLinks ✅
+   - testRandomArticle ✅
+   - testArticleNavigation ✅
 
-3. Mobile Responsiveness
-   - Mobile Layout ✅
-   - Content Visibility ✅
-   - Logo Display ✅
-
-4. Advanced Features
-   - Search Page ✅
-   - History View ✅
-   - Talk Pages ✅
-
-5. Accessibility
-   - ARIA Landmarks ✅
-   - Heading Structure ✅
-   - Skip Links ✅
+3. Features
+   - testLanguageSelection ✅
+   - testMobileView ✅
+   - testArticleActions ✅
+   - testAccessibilityFeatures ✅
 
 ## 2. Detailed Test Results
 
